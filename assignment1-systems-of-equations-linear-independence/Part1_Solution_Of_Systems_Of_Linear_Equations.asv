@@ -99,21 +99,15 @@
     Bc_rref2 = rref(Bc2)
 
     % This is an example of a system of linear equations that does not follow the rule that m > n typically has no solution
-    sprintf('As seen in the RREF of Bc2, the system is consistent')
+    sprintf('As seen in the RREF of Bc2, the system is consistent ')
+
+        sprintf('As seen in the RREF of Ab2, the system is consistent but x3 is a free variable, so a unique solution does not exist')
+
 
 % (c) ------------------------------------------------------------
     % Case 3: m < n typically has many solutions
     % Generate 100 random matrices with integers of size m x n where m is between 8 and 20 and n is between 8 and 20
     % Check if a unique solution exists for each system of linear equations Cd
-    sprintf('NOW STARTING PART C HERE ---------------------------------')
-    % Use rank to determine that
-
-
-
-
-
-
-
 
     sprintf('Out of 100 randomly generated systems of linear equations of size m < n, %d had many solutions', count3)
 
