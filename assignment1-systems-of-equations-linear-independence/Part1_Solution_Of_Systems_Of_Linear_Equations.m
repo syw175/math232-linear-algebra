@@ -103,18 +103,49 @@
 
 % (c) ------------------------------------------------------------
     % Case 3: m < n typically has many solutions
-    % Generate 100 random matrices with integers of size m x n where m is between 8 and 20 and n is between 8 and 20
-    % Check if a unique solution exists for each system of linear equations Cd
     sprintf('NOW STARTING PART C HERE ---------------------------------')
-    % Use rank to determine that
+    count3 = 0;
+    for i = 1:100
+        % Generate an integer for n from [12 to 20]
+        n = randi([12, 20]);
+        % Generate an integer from [7 to n-1]
+        m = randi([7, n-1]);
 
+        % Generate a matrix of size mxn with real numbers
+        C = rand(m, n);
 
+        % Generate a vector of size m x 1 with real numbers
+        D = rand(m, 1);
 
+        % Concentrate matrix C and vector Cd to create an augmented matrix
+        CD = cat(2, C, D);
 
+        
+        % If the rank of the coefficient matrix is LESS than the rank of
+        % the augmented matrix, there are no solutions
+        % BREAK
+        if rank(C) < rank(CD)
+            break
+        end
 
+        Cd_rref = rref(CD)
+        % Since we know the system of equations is consistent, let's check
+        % if the solution has many solutions
+        % Convert to RREF
+        if n - rank(Cd_rref)
+            count3 = count3 + 1
+        end
 
-
-
+%         % Iterate through the RREF and check if there is a row
+%         % consisting of all 0s
+%         for i = 1:size(Cd_rref)
+%             rowI = Cd_rref(i,:);
+%             if rowI == zeros(1, n)
+%                 count3 = count3 + 1;
+%                 break
+%             end
+%         end
+    end
     sprintf('Out of 100 randomly generated systems of linear equations of size m < n, %d had many solutions', count3)
 
     sprintf('Example of a system of linear equations (augmented matrix) that does not follow the rule that m < n typically has many solutions')
@@ -124,6 +155,5 @@
     d2 = [1; 2; 3];
     Cd2 = cat(2, C2, d2)
     Cd_rref2 = rref(Cd2)
-
     % This is an example of a system of linear equations that does not follow the rule that m < n typically has many solutions
     sprintf('The last column of the RREF of the system of linear equations is ALL zeros, so there are many solutions')
