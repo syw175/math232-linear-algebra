@@ -128,23 +128,13 @@
             break
         end
 
-        Cd_rref = rref(CD)
-        % Since we know the system of equations is consistent, let's check
-        % if the solution has many solutions
-        % Convert to RREF
-        if n - rank(Cd_rref)
+        Cd_rref = rref(CD);
+        % Since we know the system of equations is consistent, let's check if the solution has many solutions
+        % If # of variables (columns) - rank is > 0, then there are
+        % infinitely many solutions....
+        if n - rank(Cd_rref) > 0
             count3 = count3 + 1
         end
-
-%         % Iterate through the RREF and check if there is a row
-%         % consisting of all 0s
-%         for i = 1:size(Cd_rref)
-%             rowI = Cd_rref(i,:);
-%             if rowI == zeros(1, n)
-%                 count3 = count3 + 1;
-%                 break
-%             end
-%         end
     end
     sprintf('Out of 100 randomly generated systems of linear equations of size m < n, %d had many solutions', count3)
 
