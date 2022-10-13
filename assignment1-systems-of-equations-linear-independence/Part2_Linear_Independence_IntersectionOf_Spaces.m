@@ -21,13 +21,9 @@ B1Aug = cat(2, B1Eqn, B1Zero);
 B1AugRref = rref(B1Aug)
 
 % Show that the system is consistent
-sprintf('As seen in the RREF of B1AugRref, the system is consistent')
-
-% A non-trivial solution that satisfies the system of equations is
-% c1 = 1, c2 = 1, c3 = 1, c4 = 1, c5 = 1, c6 = 1
-% The solution is non-trivial because the coefficients are not all 0s
 % The system of equations is not linearly dependent
 % No leading variables for x4 and x5, they are free variables
+sprintf('As seen in the RREF of B1AugRref, the system is consistent with a non-zero solution')
 
 % If I row reduce the system, the columns with leading 1's are linearly
 % dependent right? How can I express this in code and boil that down to the
@@ -39,10 +35,10 @@ sprintf('As seen in the RREF of B1AugRref, the system is consistent')
 % are NOT in B′1 set are contained in the span of B′1 (and hence, that span B1 = span B′1).
 
 
-% What is the dimension of span B1? (CALCULATE THIS ANSWER AFTER)
+% What is the dimension of span B1? 
 % The dimension of the span is equal to how many independent vectors there
 % are in Span B1... In other words, the rank or number of leading 1s in the
-% RREF of the maximal linearly independent set B'1
+% RREF of the maximal linearly independent set B'1 right??
 
 
 % Consider the set: B2 = {z1, z2, z3, z4, z5} where
@@ -78,4 +74,3 @@ B2AugRref = rref(B2Aug)
 % Closed under addition
 % Closed under scalar multiplication
 % The zero vector is in the subspace
-
