@@ -29,6 +29,11 @@ sprintf('As seen in the RREF of B1AugRref, the system is consistent')
 % The system of equations is not linearly dependent
 % No leading variables for x4 and x5, they are free variables
 
+% If I row reduce the system, the columns with leading 1's are linearly
+% dependent right? How can I express this in code and boil that down to the
+% maximal linearly independent set? 
+
+% What is B'1???
 
 % Find a maximal linearly independent set B′1 of vectors from B1, and show that vectors from B1 that
 % are NOT in B′1 set are contained in the span of B′1 (and hence, that span B1 = span B′1).
@@ -66,10 +71,10 @@ B2AugRref = rref(B2Aug)
 % The dimension of the intersection is equal to how many independent vectors there
 % are in the intersection... In other words, the rank or number of leading 1s in the
 % RREF of the intersection. 
-% The dimension of the intersection is 5
 
 
-% Show that this is a subspace of R5.
+% Show that this is a subspace of R5. How can I work this out in MATLAB? If
+% I know how to do this on paper? How to express or justify in the code?
 % Closed under addition
 % Closed under scalar multiplication
 % The zero vector is in the subspace
