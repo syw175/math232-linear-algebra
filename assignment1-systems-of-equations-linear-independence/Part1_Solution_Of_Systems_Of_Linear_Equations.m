@@ -22,40 +22,40 @@
         n = randi([8, 20]);
         % Generate a matrix of size nxn with real numbers
         A = rand(n);
-        % Generate a vector of size n*1 with real numbers to represent the
-        % right most column
+        % Generate a vector of size n*1 with real numbers to represent the right most column
         b = rand(n, 1);
-        % Generate our augmented matrix by concatenating matrix A and
-        % vector b
+        % Generate our augmented matrix by concatenating matrix A and vector b
         Ab = cat(2, A, b);
 
         % Verification for testing purposes only... remove after
         Ab_rref = rref(Ab);
 
         % If rank(Coeffient matrix == augmented matrix), we have a unique
-        % sol because the system is consistent and there are no free vars
+        % solution because the system is consistent and there are no free variables
         if rank(A) == rank(Ab)
             count = count + 1;
         end
     end
-    % Output the final count of how many randomly generated eq'ns have
-    % unique solutions
+
+    % Output the final count of how many randomly generated equations have unique solutions
     sprintf('Out of 100 randomly generated systems of linear equations of size m=n, %d had a unique solution', count)
 
     % Print out MY generated exception to the rule
     sprintf('Example of a system of linear equations (augmented matrix) that does not have a unique solution when m = n')
-    A2 = [1 2 3; 4 5 6; 7 8 9];
-    b2 = [1; 2; 3];
-    Ab2 = cat(2, A2, b2)
-    Ab_rref2 = rref(Ab2)
-    % Need to show consistency + free variable in my RREF
-    sprintf('As seen in the RREF of Ab2, the system is consistent but x3 is a free variable, so a unique solution does not exist')
+    A = [1 2 3; 1 2 3; 1 2 3];
+    b = [1; 2; 3];
+    Ab = cat(2, A, b);
+    rref(Ab)
+
+    % If the rank of the coefficient matrix is LESS than the rank of the augmented matrix, there are no solutions
+    if (rank(A) < rank(Ab))
+        sprintf('Exception: This m=n system is inconsistent and therefore has no solution')
+    end
 
 % (b) NEED TRANSPOSED TO LATEX  -------------------------------------------------------------
     % Case 2: m > n typically has no solution
     % Generate 100 random matrices with integers of size m x n where m is between 8 and 20 and n is between 8 and 20
     % Check if a unique solution exists for each system of linear equations Bc
-    
     sprintf('NOW STARTING PART B HERE ---------------------------------')
     % Use rank to determine that the system of equations is NOT
     % consistent. A system of equations is INCOSISTENT or has no solutions
@@ -153,7 +153,7 @@
     n2 = 4;
     C2 = [1 2 3 4; 5 6 7 8; 9 10 11 12];
     d2 = [1; 2; 3];
-    Cd2 = cat(2, C2, d2)
-    Cd_rref2 = rref(Cd2)
+    Cd2 = cat(2, C2, d2);
+    Cd_rref2 = rref(Cd2);
     % This is an example of a system of linear equations that does not follow the rule that m < n typically has many solutions
     sprintf('The last column of the RREF of the system of linear equations is ALL zeros, so there are many solutions')
