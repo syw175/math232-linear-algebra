@@ -133,7 +133,7 @@
         % If # of variables (columns) - rank is > 0, then there are
         % infinitely many solutions....
         if n - rank(Cd_rref) > 0
-            count3 = count3 + 1
+            count3 = count3 + 1;
         end
     end
     sprintf('Out of 100 randomly generated systems of linear equations of size m < n, %d had many solutions', count3)
@@ -143,7 +143,7 @@
     n2 = 4;
     C2 = [1 2 3 4; 5 6 7 8; 9 10 11 12];
     d2 = [1; 2; 3];
-    Cd2 = cat(2, C2, d2);
-    Cd_rref2 = rref(Cd2);
+    Cd2 = cat(2, C2, d2)
+    Cd_rref2 = rref(Cd2)
     % This is an example of a system of linear equations that does not follow the rule that m < n typically has many solutions
     sprintf('The last column of the RREF of the system of linear equations is ALL zeros, so there are many solutions')
