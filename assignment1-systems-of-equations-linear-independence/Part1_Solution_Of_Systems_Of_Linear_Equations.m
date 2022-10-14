@@ -7,9 +7,7 @@
     % (b) A system of m linear equations in n unknowns, where m > n, typically has no solution.
     % (c) A system of m linear equations in n unknowns, where m < n, typically has many solutions.
     
-% (a) NEED TRANSPOSED TO LATEX  -------------------------------------------------------------
-    % Case 1: m = n typically has a unique solution
-    % Generate 100 random matrices with integers of size n x n where n is between 8 and 20
+% (a) Generate 100 random matrices with integers of size n x n where n is between 8 and 20. 
     % Check if a unique solution exists for each system of linear equations Ab
     
     sprintf('NOW STARTING PART A HERE ------------------------------------')
@@ -52,15 +50,13 @@
         sprintf('Exception: This m=n system is inconsistent and therefore has no solution')
     end
 
-% (b) NEED TRANSPOSED TO LATEX  -------------------------------------------------------------
-    % Case 2: m > n typically has no solution
+% (b) Case 2: m > n typically has no solution
     % Generate 100 random matrices with integers of size m x n where m is between 8 and 20 and n is between 8 and 20
-    % Check if a unique solution exists for each system of linear equations Bc
+    % Check if a unique solution exists for each system of linear equations
     sprintf('NOW STARTING PART B HERE ---------------------------------')
-    % Use rank to determine that the system of equations is NOT
-    % consistent. A system of equations is INCOSISTENT or has no solutions
-    % when the rank of the coefficient matrix is LESS THAN the rank of the
-    % augmented matrix
+    % A system of equations is INCOSISTENT or has no solutions when the
+    % rank of the coefficient matrix is less than the rank of the augmented
+    % matrix
     count2 = 0;
     for i = 1:100
         % Make a selection for m, where 8 <= m <= 20
@@ -101,8 +97,7 @@
     % This is an example of a system of linear equations that does not follow the rule that m > n typically has no solution
     sprintf('As seen in the RREF of Bc2, the system is consistent')
 
-% (c) ------------------------------------------------------------
-    % Case 3: m < n typically has many solutions
+% (c) Case 3: m < n typically has many solutions
     sprintf('NOW STARTING PART C HERE ---------------------------------')
     count3 = 0;
     for i = 1:100
@@ -120,7 +115,6 @@
         % Concentrate matrix C and vector Cd to create an augmented matrix
         CD = cat(2, C, D);
 
-        
         % If the rank of the coefficient matrix is LESS than the rank of
         % the augmented matrix, there are no solutions
         % BREAK
@@ -138,12 +132,10 @@
     end
     sprintf('Out of 100 randomly generated systems of linear equations of size m < n, %d had many solutions', count3)
 
-    sprintf('Example of a system of linear equations (augmented matrix) that does not follow the rule that m < n typically has many solutions')
-    m2 = 3;
-    n2 = 4;
-    C2 = [1 2 3 4; 5 6 7 8; 9 10 11 12];
-    d2 = [1; 2; 3];
-    Cd2 = cat(2, C2, d2)
-    Cd_rref2 = rref(Cd2)
-    % This is an example of a system of linear equations that does not follow the rule that m < n typically has many solutions
-    sprintf('The last column of the RREF of the system of linear equations is ALL zeros, so there are many solutions')
+    sprintf('Example of a system of linear equations (augmented matrix) that size m < n that is inconsistent and therefore has no solution')
+    m3 = 3;
+    n3 = 4;
+    C3 = [1 2 3 4; 5 6 7 8; 9 10 11 12];
+    D3 = [1; 2; 4];
+    CD3 = cat(2, C3, D3)
+    Cd_rref3 = rref(CD3)
