@@ -38,7 +38,7 @@
     % Print out MY generated exception to the rule
     sprintf('My exception of a m=n system without a unique solution')
     A = [1 2 3; 1 2 3; 1 2 3];
-    b = [1; 2; 3];
+    b = [1; 2; 2];
     Ab = cat(2, A, b)
     rref(Ab)
     sprintf('End part 1A')
@@ -76,9 +76,7 @@
 
     % This is an example of a system of linear equations that does not follow the rule that m > n typically has no solution
     sprintf('My exception of a m > n with many solutions')
-    m2 = 4;
-    n2 = 3;
-    B2 = [1 2 3; 4 5 6; 7 8 9; 10 11 12];
+    B2 = [1 2 3; 2 4 6; 3 3 4; 10 10 12];
     c2 = [1; 2; 3; 4];
     Bc2 = cat(2, B2, c2)
     Bc_rref2 = rref(Bc2)
