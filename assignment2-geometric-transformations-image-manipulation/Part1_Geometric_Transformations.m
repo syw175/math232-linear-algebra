@@ -43,15 +43,19 @@ axis([-1 10 -1 15]);
 
 % Stretch in the x-direction by a factor of 5
 xStretch = [5 0; 0 1];
-
+vector1 = [2; 8];
+vector2 = [5; 13];
+cat(2, (xStretch*vector1), (xStretch*vector2));
 
 % Reflection across the y-axis
-yReflect = [-1 0; 0 1]
+yReflect = [-1 0; 0 1];
+cat(2, (yReflect*vector1), (yReflect*vector2));
+
+% To-Do... Plot both these transformations and show original one
 
 
 
-
-
+% To-Do...
 % • Composition
 % Verify the result of Problem A6 in Section 3.3 of the text; that the two compositions of a
 % vertical shear and a stretch in the y direction, do not commute. Do this by plotting the
@@ -61,3 +65,5 @@ yReflect = [-1 0; 0 1]
 % operations are applied. Corroborate your ’experimental proof’ of the non-commutability
 % of these transformations by referring to Theorem 3.2.5 of the text (i.e., by considering
 % the associated matrices).
+
+
