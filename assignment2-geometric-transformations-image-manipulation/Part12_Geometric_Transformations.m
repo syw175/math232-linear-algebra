@@ -31,6 +31,8 @@ plot(P(1,3),P(2,3),'k*');
 V = [1 0; 3 1];
 S = [1 0; 0 5];
 
+
+
 % Calculate the composition of S followed by V and then plot the result
 VS_Operation = V*S;
 VS_Operation_Result_Matrix = VS_Operation*unit_matrix;

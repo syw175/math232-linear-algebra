@@ -58,28 +58,53 @@
         \end{minipage}%
     \end{figure}
     
-    This is corroborated by Theorem 3.2.5 of the text which states that the composition of two linear transformation is given by the matrix product of the two transformations. As seen in the following result, the composition of $V$ and $S$ is not equal to the composition of $S$ and $V$. Therefore, 
-    it is not commutative. (SHOULD I INCLUDE THE MATRIX COMPLETE RESULT HERE)??
+    This is corroborated by Theorem 3.2.5 of the text which states that the composition of two linear transformation is given by the matrix product of the two transformations. As seen in the following result, the composition of $V$ and $S$ is not equal to the composition of $S$ and $V$. Therefore, it is not commutative.
+    
     \begin{equation}
-        \begin{bmatrix} 1 & 0 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix} \neq \begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 3 & 1 \end{bmatrix}
+        \begin{bmatrix} 
+            1 & 0 \\ 3 & 1 
+        \end{bmatrix}
+        \begin{bmatrix} 
+            1 & 0 \\ 0 & 5 
+        \end{bmatrix}
+        \neq
+        \begin{bmatrix}
+            1 & 0 \\ 0 & 5 
+        \end{bmatrix} 
+        \begin{bmatrix} 
+            1 & 0 \\ 
+            3 & 1 
+        \end{bmatrix}
+    \end{equation}
+    
+    \begin{equation}
+        \begin{bmatrix}
+            1 & 0 \\
+            3 & 5
+        \end{bmatrix}
+        \neq
+        \begin{bmatrix}
+            1 & 0 \\
+            15 & 5
+        \end{bmatrix}
     \end{equation}
 
+    \item[2)] To transform the black rectangle into the red rectangle, we need to apply a rotation $R$ of 180 degrees followed by a 5 (CHECK THIS) magnitude horizontal stretch $S$. Taking the composition of these two transformations, we obtain the following transformation matrix $A$: (CHECK THE COMPOSITION SYMBOL)
 
-    \item[2)] To transform the black rectangle into the red rectangle, we need to apply a rotation $R$ of 180 degrees followed by a 
-    horizontal stretch $S$. Taking the composition of these two transformations, we obtain the following transformation matrix $A$:
-
-    \[ \text{A: } [R \cdot S] = \begin{bmatrix}
+    \[ \text{A: } [R \cdot S]
+    = 
+    \begin{bmatrix}
         cos(\pi) & -sin(\pi) \\
         sin(\pi) & cos(\pi)
-    \end{bmatrix} \begin{bmatrix}
-        2 & 0 \\
-        0 & 3.5
-    \end{bmatrix} = 
+    \end{bmatrix} 
     \begin{bmatrix}
-        -2 & 0 \\
-        0 & -3.5
+        7 & 0 \\
+        0 & 1
+    \end{bmatrix} 
+    = 
+    \begin{bmatrix}
+        -7 & 0 \\
+        0 & -1
     \end{bmatrix} \]
-
-    
 \end{enumerate}
 \end{document}
