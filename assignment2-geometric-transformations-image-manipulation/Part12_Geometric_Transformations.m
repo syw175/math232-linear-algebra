@@ -50,9 +50,4 @@ fprintf("Clearly the two compositions of a vertical shear and a stretch in the x
 
 % Theorem 3.2.5 of the text states that If L: Rn -> Rm and M: Rm -> Rp are linear mappings, then 
 % the composition of M and L is a linear mapping from Rn to Rp and [M o L] = [M][L].
-% To put into Latex, [M o L] = [M o L]
-% So put two things onto my report: 
-% S = [1 0; 0 5] and V = [1 0; 3 1]
-% Then S o V = [1 0; 3 5] and V o S = [1 0; 15 5]
-% They are not equal
 

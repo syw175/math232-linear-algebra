@@ -8,6 +8,7 @@
 \usepackage{titling}
 \usepackage{graphicx}    %  in the preamble
 \usepackage{fancyhdr}
+\usepackage{subcaption}
 \usepackage[colorlinks=true]{hyperref}
 
 \setlength{\droptitle}{-10em}
@@ -23,40 +24,62 @@
 \noindent\makebox[\textwidth][c]{\Large\bfseries Assignment 2}
 \normalsize
 \begin{enumerate}[leftmargin=\labelsep]
-    \item[1A.)] Let $x_1 = (2, 5) \text{and let } x_2 = (8, 13)$. Working with vectors $x_1$ and $x_2$, I have elected to apply a stretch in the x-direction by a factor of a 5, and a reflection across the y-axis. These are denoted by the following matrix operators: 
+    \item[1A.)] Let $x_1 = \begin{bmatrix} 2 \\ 5 \end{bmatrix} \text{ and } x_2 = \begin{bmatrix} 8 \\ 13 \end{bmatrix}$ be vectors representing a rectangle's terminal points. 
+    I have selected to apply a $5$ magnitude stretch in the $x$-direction ($A_1)$, and a reflection about the $y$-axis ($A_2$). These geometric transformations
+    can be represented by the following matrices respectively:
     
-    $$
-    \textbf{X-Direction Stretch: }\begin{bmatrix} 5 & 0 \\ 0 & 1
-    \end{bmatrix},\:
-    \textbf{Y-Axis Reflection: }\begin{bmatrix} -1 & 0 \\ 0 & 1
-    \end{bmatrix}
-    $$
+    \[
+        A_1 = 
+        \begin{bmatrix}
+            5 & 0 \\
+            0 & 1
+        \end{bmatrix} A_2 =
+        \begin{bmatrix}
+            -1 & 0 \\
+            0 & 1
+        \end{bmatrix} 
+    \]
     
-    We obtain the following results by multiplying vectors $x_1$ and $x_2$ by these transformation matrices and plotting their resulting rectangles where black is our original plot, red is our x-direction stretch, and blue as our reflection across the y-axis. \textbf{LOOK INTO WAYS TO ANNOTATE FIGURES}
-    
-    \begin{center}
-        \includegraphics[scale=0.5]{Figure1.eps}
-    \end{center}
-    
-    \item[1B.)] For Part1B Composition: Verify the result of Problem A6 in Section 3.3 of the text; that the two compositions of a vertical shear and a stretch in the y direction, do not commute. Do this by plotting the image of the unit square with corners at (1, 1),(2, 1),(2, 2),(1, 2). Then plot the results of applying the COMPOSITION of the two operations (vertical shear and stretch) in both orders and showing that the resulting shape depends on the order in which the operations are applied. Corroborate your ’experimental proof’ of the non-commutability of these transformations by referring to Theorem 3.2.5 of the text (i.e., by considering the associated matrices).
-    
-    \item[2.A)] Manipulating an image: Find the matrix that transforms the black rectangle into the red rectangle. Look at the diagram and observe what has happened to the black rectangle. Form the matrices that do these operations; there are two. Multiply these matrices in the correct order to get the transformation matrix A. Experimentally verify that you can plot the black rectangle yourself and then multiply the vectors that describe the opposite vertices by A and obtain and plot the red rectangle. Include the matrices you used to do this in your report.
-    
-    The first matrix reflects the black rectangle over the y-axis 
-    
-     $$
-    \textbf{First matrix operation: }\begin{bmatrix} -1 & 0 \\ 0 & 1
-    \end{bmatrix}
-    $$
-    
+    Applying our transformation matrices, we get the results in Figure 1 where black is our original rectangle, red is our x-direction stretch, and magenta is our y-axis reflection.
 
+    \item[1B.)] If we let $V$ be the matrix operator $V = \begin{bmatrix} 1 & 0 \\ 3 & 1 \end{bmatrix}$ and $S$ be the matrix operator $S = \begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix}$, then we can see that the composition of $V$ and $S$ does not commute.
+    Let us consider the unit square with corners at $(1, 1), (2, 1), (2, 2), (1, 2)$. Applying the composition of $V$ and $S$ in both orders, Figure 2 shows that the resulting shape depends on the order in which the operations are applied.
+    
+    \begin{figure}[h]
+        % Side by side figures 
+        \begin{minipage}[c]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{Figure1.eps}
+        \caption{}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{Figure2.eps}
+        \caption{}
+        \end{minipage}%
+    \end{figure}
+    
+    This is corroborated by Theorem 3.2.5 of the text which states that the composition of two linear transformation is given by the matrix product of the two transformations. As seen in the following result, the composition of $V$ and $S$ is not equal to the composition of $S$ and $V$. Therefore, 
+    it is not commutative. (SHOULD I INCLUDE THE MATRIX COMPLETE RESULT HERE)??
+    \begin{equation}
+        \begin{bmatrix} 1 & 0 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix} \neq \begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 3 & 1 \end{bmatrix}
+    \end{equation}
+
+
+    \item[2)] To transform the black rectangle into the red rectangle, we need to apply a rotation $R$ of 180 degrees followed by a 
+    horizontal stretch $S$. Taking the composition of these two transformations, we obtain the following transformation matrix $A$:
+
+    \[ \text{A: } [R \cdot S] = \begin{bmatrix}
+        cos(\pi) & -sin(\pi) \\
+        sin(\pi) & cos(\pi)
+    \end{bmatrix} \begin{bmatrix}
+        2 & 0 \\
+        0 & 3.5
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        -2 & 0 \\
+        0 & -3.5
+    \end{bmatrix} \]
+
+    
 \end{enumerate}
 \end{document}
-
-
-    $$
-    \textbf{X-Direction Stretch: }\begin{bmatrix} 5 & 0 \\ 0 & 1
-    \end{bmatrix},\:
-    \textbf{Y-Axis Reflection: }\begin{bmatrix} -1 & 0 \\ 0 & 1
-    \end{bmatrix}
-    $$

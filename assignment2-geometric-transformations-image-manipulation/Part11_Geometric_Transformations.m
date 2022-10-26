@@ -42,7 +42,7 @@ yReflect_Operation = [-1 0; 0 1];
 yReflect_Result_Matrix = yReflect_Operation * org_matrix;
 yReflect_v = [yReflect_Result_Matrix(1,1), yReflect_Result_Matrix(1,2), yReflect_Result_Matrix(1,2), yReflect_Result_Matrix(1,1), yReflect_Result_Matrix(1,1)];
 yReflect_z = [yReflect_Result_Matrix(2,1), yReflect_Result_Matrix(2,1), yReflect_Result_Matrix(2,2), yReflect_Result_Matrix(2,2), yReflect_Result_Matrix(2,1)];
-plot(yReflect_v, yReflect_z, 'k-', 'LineWidth', 1);
+plot(yReflect_v, yReflect_z, 'm-', 'LineWidth', 1);
 hold on;
 % Plotting where the red, green, and blue points are
 P = [-2 -8 -8 -2;5 5 13 13];
