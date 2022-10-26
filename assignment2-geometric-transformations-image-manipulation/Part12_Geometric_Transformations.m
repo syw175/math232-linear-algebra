@@ -1,4 +1,4 @@
-% • Composition
+% Composition
 % Verify the result of Problem A6 in Section 3.3 of the text; that the two compositions of a
 % vertical shear and a stretch in the y direction, do not commute. Do this by plotting the
 % image of the unit square with corners at (1, 1),(2, 1),(2, 2),(1, 2). Then plot the results
@@ -28,10 +28,8 @@ plot(P(1,3),P(2,3),'k*');
 % Composition of two operations in Problem A6 from Section 3.3 of the text 
 % Let V be a vertical shear by amount 3
 % Let S be a stretch by a factor 5 in the x2 direction.
-V = [1 0; 3 1];
-S = [1 0; 0 5];
-
-
+V = [1 0; 3 1]
+S = [1 0; 0 5]
 
 % Calculate the composition of S followed by V and then plot the result
 VS_Operation = V*S;
@@ -49,7 +47,3 @@ SV_z = [SV_Operation_Result_Matrix(2,1), SV_Operation_Result_Matrix(2,1), SV_Ope
 plot(SV_v, SV_z, 'b-', 'LineWidth', 1);
 hold on;
 fprintf("Clearly the two compositions of a vertical shear and a stretch in the x2 direction, do not commute.")
-
-% Theorem 3.2.5 of the text states that If L: Rn -> Rm and M: Rm -> Rp are linear mappings, then 
-% the composition of M and L is a linear mapping from Rn to Rp and [M o L] = [M][L].
-
