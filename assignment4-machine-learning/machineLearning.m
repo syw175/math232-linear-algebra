@@ -25,7 +25,8 @@
 filename = 'CA4data.xlsx';
 q1A = figure;
 q1B = figure;
-q2 = figure;
+q2A = figure;
+q2B = figure;
 hours232 = readmatrix(filename, 'Range', 'A2:A46');
 grades152 = readmatrix(filename, 'Range', 'B2:B46'); 
 grades232 = readmatrix(filename, 'Range', 'C2:C46');
@@ -104,7 +105,7 @@ title('Hours Studied Per Week vs. Grade in Math 232');
 % In this question, we include another diagnostic variable, the grade in Math 152, alongside the number of hours studied
 % in Math 232 to predict student success in Math 232. Thus, our data set is D2 = {(hi,ki,gi), i = 1,...,45}. Our linear model
 % for this data set is g = a + bh + ck. That is, we look for the best fitting plane through the data points in R3.
-figure(q2);
+figure(q2A);
 col3 = ones(45,1);
 % Calculate our matrix G as well as its transpose
 G = [col3, hours232, grades152];
@@ -142,5 +143,38 @@ xlabel('Hour(s) per week studied');
 ylabel('Grade in Math 152');
 zlabel('Grade in Math 232');
 title('Hours Studied Per Week and Grade in Math 152 vs. Grade in Math 232');
+
+% Plot the success line from question 2
+figure(q2B);
+x = 0:0.1:15;
+aValue = 10553/129;
+bValue = -1666/355;
+successLine = aValue + bValue * x;
+hold on;
+plot(x, successLine, 'r');
+hold on;
+axis([0 15 20 100]);
+hold on;
+
+% Annotate pass region above the line (top right)
+AnnotatedPassRegion = annotation('textbox', [0.6 0.6 0.1 0.1], 'String', 'Pass Region');
+AnnotatedPassRegion.FontSize = 14;
+AnnotatedPassRegion.FontWeight = 'bold';
+AnnotatedPassRegion.Color = 'black';
+AnnotatedPassRegion.BackgroundColor = 'green';
+AnnotatedPassRegion.EdgeColor = 'green';
+
+% Annotate fail region below the line
+AnnotatedFailRegion = annotation('textbox', [0.2 0.2 0.1 0.1], 'String', 'Fail Region');
+AnnotatedFailRegion.FontSize = 14;
+AnnotatedFailRegion.FontWeight = 'bold';
+AnnotatedFailRegion.Color = 'black';
+AnnotatedFailRegion.BackgroundColor = 'red';
+AnnotatedFailRegion.EdgeColor = 'red';
+
+% Label our graph
+xlabel('Hour(s) per week studied');
+ylabel('Grade in Math 152');
+title('Hours Studied Per Week and Grade in Math 152');
 % -----------------------------------------------------------------------------------------------
 % End of Question 2
