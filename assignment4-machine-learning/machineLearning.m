@@ -131,6 +131,13 @@ ggg = a + b*X + c*Y;
 mesh(X, Y, ggg);
 hold on;
 
+% Plot the plane that intersects the data when math 232 grade = 50
+[i j] = meshgrid(0:1:100); % Generate x and y data
+z = 50*ones(size(i, 1)); % Generate z data
+% Plot the surface and set the color to red
+surf(i, j, z, 'FaceColor', 'r', 'FaceAlpha', 0.5);
+hold on;
+
 xlabel('Hour(s) per week studied');
 ylabel('Grade in Math 152');
 zlabel('Grade in Math 232');
